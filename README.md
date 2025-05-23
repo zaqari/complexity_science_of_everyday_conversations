@@ -1,4 +1,4 @@
-# Understanding Universal Conceptual Organizations in Conversational Dynamics
+# The Complexity Science of Everyday Conversation: Selves, Others, and Drift between Concepts in Dialog
 
 The basic premise is this: there appears to be two underlying universal, dynamical structures underlying conversational turns and their lexico-semantic content:
 
@@ -14,5 +14,5 @@ The scripts contained here ought to be run in the following steps:
    1. Download .cha files from talkbank manually, then place them in the folder `data/chas/`
    2. request and download candor files, then place them in the folder `data/candor/`
 2. Run the scripts contained in preprocessing labeled `0-`
-3. Run `shape_CEDA.py`, designating whether one is working with the cha file corpus or the candor corpora.
+3. Run `shape_CEDA.py` on a server containing the data you're looking for.
 4. Use `2-CIT-Aanalysis.ipynb` to complete data analysis.
