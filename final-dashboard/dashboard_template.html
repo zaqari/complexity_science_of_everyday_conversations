@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+hr {
+  border-width: 3px;
+}
+
+.dataframe {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.dataframe thead tr {
+    background-color: #000a98;
+    color: #ffffff;
+    text-align: left;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 12px 15px;
+}
+
+.dataframe tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.dataframe tbody tr.fancy-row {
+    padding: 0px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.dataframe tbody tr:last-of-type {
+    border-bottom: 2px solid #000a98;
+}
+
+.dataframe tbody tr.active-row {
+    font-weight: bold;
+    background-color: #000a98;
+    color: #ffffff;
+}
+
+a:link {
+  color: rgb(201, 178, 5);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(70, 5, 201);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.bgimg-3 {
+  background-image: url("https://cdn.sanity.io/images/tj19lfsm/production/fd7c5b9512848dd55995d140d0e2ee0b099ce998-1280x790.jpg");
+  min-height: 80%;
+}
+
+.grey-block{
+  color: white;
+  background-color: #777;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.grey-H3{
+  color: white;
+  text-align: right;
+}
+
+.white-block{
+  color: #777;
+  background-color: white;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.white-H3{
+  color: #777;
+  text-align: right;
+}
+
+.black-block{
+  color: white;
+  background-color: #000000;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.black-H3{
+  color: white;
+  text-align: right;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-3" style="min-height: 50%;">
+  <div class="caption" id="title">
+    <span class="border">3k+ EVERYDAY CONVERSATIONS</span>
+  </div>
+</div>
+
+<div class="white-block">
+  <h3 class="white-H3">Monolingual English Conversations</h3>
+  <details>
+    <summary><b>Summary and report</b></summary>
+    <details>
+    <summary><b>Summary and report</b></summary>
+    <div>
+      <p>Concepts shared between utterances have a durative, though temporally limited effect. What concepts are expressed by any one speaker appear to more strongly influence/are easier to recover from  the same speaker's subsequent utterances, though utterances clearly influence the concepts expressed by both the "self" and "others" during interaction. The change in Entropy (see the top figure below, and the upper figure for each individual corpus) is exponential. Notably, as time progresses the difference in how much an utterance $x$ influences a speaker's own contributions to conversation and their partners' shrinks exponentially as well (see the lower figure below).</p>
+      <p>Exponential growth parameters for $\alpha$ are as follows</p>
+      <ul>
+        <li>self: ($\alpha=-.199, SE=.001, t(519389)=-144.27, p < 1e^{-9}$)</li>
+        <li>other: ($\alpha=-.141, SE=.001, t(509862)=-79.32, p< 1e^{-9}$)</li>
+        <li>other-self: ($\alpha=-.178, SE=.002, t(496276)=-114.87, p< 1e^{-9}$)</li>
+      </ul>
+      <iframe src="./plots/eng-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+      <iframe src="./plots/eng-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+    </div>
+    <details>
+      <summary><b>Individual Corpora</b></summary>
+      
+      [[ind_content_eng]]
+    
+    </details>
+    
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 5%;"></div>
+
+<div class="grey-block">
+  <h3 class="grey-H3">CANDOR Exploratory Study</h3>
+  <details>
+    <summary><b>Summary and report</b></summary>
+    <p>Results indicate that it is not merely semantic similarity that facilitates terminal perceptions of shared perspective and positive assessment of one's discursive partners, but the degree to which speakers and partners' responses follow population norms for how much information is carried over from one utterance to the next.</p>
+    <p>People do not look for similarity, they look for synergy--the ability to jointly move from one set of concepts to the next with their partner as a marker of conversational quality.</p>
+    <div>
+      [[candor_params]]
+    </div>
+    <div>
+      [[candor_aic]]
+    </div>
+    
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 5%;"></div>
+
+<div class="white-block">
+  <h3 class="white-H3">Multilingual Conversations Across Languages</h3>
+  <details>
+    <div>
+      <summary><b>Summary and report</b></summary>
+      <p>Analyses of 8 additional languages, plus a subset of the English conversation data, replicates the same temporal and interpersonal characteristics of the English monolingual study.</p>
+      <p>Exponential growth parameters for $\alpha$ are as follows</p>
+      <ul>
+        <li>self: ($\alpha=-.111, SE=.001, t(347984)=-74.79, p< 1e^{-9}$)</li>
+        <li>other: ($\alpha=-.060, SE=.002, t(285890)=-34.45, p< 1e^{-9}$)</li>
+        <li>other-self: ($\alpha=-.103, SE=.00189, t(2833643)=-54.67, p<`e^{-9}$)</li>
+      </ul>
+      <iframe src="./plots/multi-main-resid.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+      <iframe src="./plots/multi-main-delta.html" style="width: 100%; height: 500px; left:4.5%; top:5%" frameBorder="0"></iframe>
+    </div>
+    <details>
+      <summary><b>Individual Languages</b></summary>
+      
+      [[ind_content_multiling]]
+    
+    </details>
+      
+
+  </details>
+</div>
+
+<div class="bgimg-3" style="min-height: 35%;"></div>
+
+</body>
+</html>

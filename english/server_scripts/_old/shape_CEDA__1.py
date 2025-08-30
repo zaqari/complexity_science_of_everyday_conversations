@@ -23,7 +23,7 @@ print('CUDA:', torch.cuda.is_available())
 start = dt.now()
 PATH = '/home/zprosen/d/shapeoflang/'
 
-RAW_PATH = os.path.join(PATH, 'raw-null-2')
+RAW_PATH = os.path.join(PATH, 'raw')
 
 CKPTS_PATH = os.path.join(PATH, 'ckpts')
 if not os.path.exists(CKPTS_PATH):
@@ -36,9 +36,8 @@ if os.path.exists(os.path.join(PATH,'start_at.txt')):
     start_at = open(os.path.join(PATH,'start_at.txt'), 'r').read()
 
 level = [7,-1]
-sigma = .3
 
-print(PATH, '\n', start_at, '\n', level, '\n\n', sigma, '\n\n')
+print(PATH, '\n', start_at, '\n', level, '\n\n')
 
 
 
@@ -82,14 +81,14 @@ print(PATH, '\n', start_at, '\n', level, '\n\n', sigma, '\n\n')
 ###########################################################################################
 ### Data set-up
 ###########################################################################################
-subids = np.array([f for f in sorted(os.listdir(RAW_PATH)) if (not f.startswith('.'))], dtype='object')
+subids = np.array([f for f in sorted(os.listdir(RAW_PATH)) if not f.startswith('._')], dtype='object')
 
 
 #############################################################################
 ### starting from a saved checkpoint!
 #############################################################################
 if start_at and (start_at in subids):
-    subids = subids[((subids==start_at).nonzero()[0][0]+1):]
+    subids = subids[(subids==start_at).nonzero()[0][0]:]
 
 print(subids, '\n\n')
 
@@ -99,27 +98,15 @@ print(subids, '\n\n')
 #############################################################################
 for i, submission_id in enumerate(subids):
 
-    if submission_id.endswith('.csv'):
-        df = pd.read_csv(
-            os.path.join(RAW_PATH, submission_id)
-        )
-
-    elif submission_id.endswith('.parquet'):
-        df = pd.read_parquet(
-            os.path.join(RAW_PATH, submission_id)
-        )
-
-    else:
-        df = pd.read_table(
-            os.path.join(RAW_PATH, submission_id),
-            sep='\t'
-        )
+    df = pd.read_csv(
+        os.path.join(RAW_PATH, submission_id)
+    )
 
     df = df.loc[
         (~df['x_utterance'].isna())
         & (~df['y_utterance'].isna())
     ]
-    # df['conversation_id'] = submission_id
+    df['conversation_id'] = 'candor-' + submission_id
 
     meta_data_cols = [col for col in list(df) if col not in ['x_utterance', 'y_utterance']]
 
@@ -130,7 +117,7 @@ for i, submission_id in enumerate(subids):
 
     if len(df) > 0:
         GRAPH = ceda_model(
-            sigma=sigma,
+            sigma=1.5,
             device='cuda',
             wv_model='roberta-base',
             wv_layers=level

@@ -35,7 +35,7 @@ text_columns = ['turn_id', 'utterance', 'speaker', 'start', 'stop', 'delta']
 sort_compose_columns = ['race', 'sex', 'edu']
 
 for file_id_no, f in enumerate(files):
-    temp_file = os.path.join(candor_path, f.split('/')[-1].split('.zip')[0])
+    temp_file = os.path.join(output_file_path, f.split('/')[-1].split('.zip')[0])
 
     # Unzip the file
     with zipfile.ZipFile(f, 'r') as zf:
@@ -59,45 +59,20 @@ for file_id_no, f in enumerate(files):
         data = []
         for i in tqdm(dft.index):
             uid = dft['speaker'].loc[i]
-
-            # comparisons to "other"
-            next_turns_other = dft.loc[
-                                   (dft.index > i)
-                                   & (~dft['speaker'].isin([uid]))
-                                   ].index.values[:max_turns].tolist()
-
-            # comparisons to "self"
-            next_turns_self = dft.loc[
-                                  (dft.index > i)
-                                  & dft['speaker'].isin([uid])
-                                  ].index.values[:max_turns].tolist()
+            next_turns = dft.loc[
+                             (~dft['speaker'].isin([uid]))
+                             & (dft.index > i)
+                             ].index.values[:max_turns]
 
             d_ = {'x_' + col: dft[col].loc[i] for col in text_columns}
             for k, v in ud[uid].items():
                 d_['x_' + k] = v
 
-            for t in next_turns_other:
+            for t in next_turns:
                 _uid = dft['speaker'].loc[t]
-                d_['self'] = False
-
-                for col in text_columns:
-                    d_['y_' + col] = dft[col].loc[t]
-
+                d_.update({'y_' + col: dft[col].loc[t] for col in text_columns})
                 for k, v in ud[_uid].items():
                     d_['y_' + k] = v
-
-                data += [d_.copy()]
-
-            for t in next_turns_self:
-                _uid = dft['speaker'].loc[t]
-                d_['self'] = True
-
-                for col in text_columns:
-                    d_['y_' + col] = dft[col].loc[t]
-
-                for k, v in ud[_uid].items():
-                    d_['y_' + k] = v
-
                 data += [d_.copy()]
 
         if data:
@@ -106,7 +81,7 @@ for file_id_no, f in enumerate(files):
                 data['combined_' + col] = [sort_compose(data[['x_' + col, 'y_' + col]].loc[idx].values) for idx in
                                            data.index]
             data.to_csv(
-                os.path.join(candor_path, str(file_id_no) + '.csv'),
+                os.path.join(output_file_path, str(file_id_no) + '.csv'),
                 index=False,
                 encoding='utf-8'
             )
