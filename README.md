@@ -16,3 +16,18 @@ The scripts contained here ought to be run in the following steps:
 2. Run the scripts contained in preprocessing labeled `0-`
 3. Run `shape_CEDA.py` on a server containing the data you're looking for.
 4. Use `2-CIT-Aanalysis.ipynb` to complete data analysis.
+
+## Process from the perspective of the itkin server
+- [ ] Create aligned documents using files in `0-preprocessing`
+- [ ] scp /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/data/server_ready/null-corpus.parquet zprosen@itkin.comm.ucla.edu:/home/zprosen/d/shapeoflang/raw
+- [ ] python3 ./shape_CEDA.py
+- [ ] scp zprosen@itkin.comm.ucla.edu:/home/zprosen/d/shapeoflang/ckpts/graph-obj-null-corpus.parquet.pt /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/data/ckpts 
+- [ ] Stich document (1-Stitching-ckpts-CHAs.ipynb)
+- [ ] Create omni-document (2-Create-Omni-File.ipynb)
+- [ ] Calculate residual (3.1… .ipynb)
+- [ ] Null test (3.2-Null-Hyp.ipynb)
+- [ ] Calculate Allan variance (4.allan_variance.1 .ipynb)
+- [ ] scp /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/4-complexity_tests/allan-variance/allan_var.parquet [zprosen@](mailto:zprosen@itkin.comm.ucla.edu)itkin.comm.ucla.edu:/home/zprosen/d/allan_variance/
+- [ ] Update allan_factor_server.py
+- [ ] scp [zprosen@itkin.comm.ucla.edu]:/home/zprosen/d/allan_variance/av-params.csv /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/4-complexity_tests/allan-variance/
+- [ ] Power-law analysis (4.allan_variance.2 .ipynb)
