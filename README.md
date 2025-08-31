@@ -29,5 +29,5 @@ The scripts contained here ought to be run in the following steps:
 - [ ] Calculate Allan variance (4.allan_variance.1 .ipynb)
 - [ ] scp /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/4-complexity_tests/allan-variance/allan_var.parquet [zprosen@](mailto:zprosen@itkin.comm.ucla.edu)itkin.comm.ucla.edu:/home/zprosen/d/allan_variance/
 - [ ] Update allan_factor_server.py
-- [ ] scp [zprosen@itkin.comm.ucla.edu]:/home/zprosen/d/allan_variance/av-params.csv /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/4-complexity_tests/allan-variance/
+- [ ] scp zprosen@itkin.comm.ucla.edu:/home/zprosen/d/allan_variance/av-params.csv /Volumes/TOREN/comp_ling/datasci/ComplexityScienceOfEverydayConvos/english/4-complexity_tests/allan-variance/
 - [ ] Power-law analysis (4.allan_variance.2 .ipynb)
