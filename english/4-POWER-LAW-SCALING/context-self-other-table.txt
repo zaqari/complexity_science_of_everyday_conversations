@@ -1,0 +1,26 @@
+\begin{tabular}{llll}
+\hline
+context_type & b & s2 & n \\\hline
+\hline\hline
+advising & -0.094 & 0.117 & 13 \\\hline
+colloquia & 0.011 & 0.219 & 145 \\\hline
+defense & 0.051 & 0.187 & 37 \\\hline
+discussion & -0.1 & 0.086 & 138 \\\hline
+family & -0.395 & 0.041 & 369 \\\hline
+first meeting & -0.482 & 0.022 & 3312 \\\hline
+friend & -0.358 & 0.063 & 93 \\\hline
+group learning & 0.069 & 1.545 & 20 \\\hline
+interviews & -0.301 & 0.002 & 6 \\\hline
+labs & -0.051 & 0.11 & 73 \\\hline
+lel & -0.114 & 0.144 & 271 \\\hline
+les & -0.121 & 0.316 & 370 \\\hline
+meetings & -0.132 & 0.092 & 100 \\\hline
+office_hours & -0.035 & 0.057 & 125 \\\hline
+seminars & -0.032 & 0.057 & 105 \\\hline
+service_encounters & 0.019 & 0.042 & 96 \\\hline
+student_presentations & -0.07 & 0.131 & 188 \\\hline
+study_groups & -0.055 & 0.014 & 47 \\\hline
+tours & -0.055 & 0.071 & 34 \\\hline
+tutoring & -0.437 & 0.063 & 10 \\\hline
+\hline
+\end{tabular}
