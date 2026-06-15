@@ -1,0 +1,21 @@
+
+model{
+    b0 ~ dunif(-100, 100)
+    phi ~ dunif(-100, 100)
+    gamma ~ dunif(.0001, 10)
+    omega ~ dunif(.0001, 10)
+
+    for (c in 1:CCONVERSATION){
+        conversation_sigma[c] ~ dnorm(omega, 1)
+    }
+
+    for (p in 1:KSPEAKER){
+        speaker_sigma[p] ~ dnorm(gamma, 1)
+    }
+
+    for (r in 1:ROWS){
+        # mu[r] <- (survey_var[r] * phi)
+        # sigma[r] <- conversation_sigma[conversation[r]] + speaker_sigma[speaker[r]]
+        slope[r] ~ dnorm(b0 + (survey_var[r] * phi), 1/pow(conversation_sigma[conversation[r]] + speaker_sigma[speaker[r]],2))
+    }
+}
