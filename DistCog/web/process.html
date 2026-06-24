@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+MathJax = {
+tex: {
+  inlineMath: [['$', '$']]
+}
+};
+</script>
+</head>
+<body>
+<div style="text-align: right; color:white;">
+    <embed src="./example/ConvoVis.png" style="object-fit: cover;width: 100%;">
+    <p>(a) Example conversation text for an utterance by speaker 1 ($x$) compared to subsequent utterances by speaker 1 and their partners ($y$). Numbers indicate how many turns after the start of the sequence for that subsequent speaker each utterance occurs within.</p>
+    <embed src="./example/2.html" width="98%" height="250">
+    <embed src="./example/1.html" width="99%" height="250">
+    <embed src="./example/0.html" width="100%" height="250">
+    <p>(b) Convergence-Information (CI  / $I(x;y)$) for three turns by Speaker 1.</p>
+    <embed src="./example/speaker1-AVAR.html" width="100%" height="500">
+    <p>(c) Allan Variance for Speaker 1 by temporal distance in turns between the utterances $x$ and $y$ </p>
+</div>
+<p style="color: white">Figure 1: An example of the steps involved in our analysis. The utterances in figure (a) are taken from the processed, aligned corpus, where each utterance $x$ is compared to a set of subsequent utterances $y$ up to 200 turns apart from one another. Utterances are numbered according to how many utterances after after the first, subsequent utterance $y$ spoken by the same speaker it is ($\Delta_t$). The utterance $x$ is compared to each utterance $y$ separately in order to calculate convergence information (CI) for each comparison. The bars in figure (b) capture CI for the utterance $x$ (printed on the y-axis) compared to subsequent utterances up until the end of a conversation. Figure (3) demonstrates Allan Variance for CI as a function of how many turns after the first subsequent utterance $y$ subsequent utterances are are for a total conversation, for the same speaker who wrote the utterances $x$ (in gold) and one of their partners (in blue).</p>
+</body>
+</html>

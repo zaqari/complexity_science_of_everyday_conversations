@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+hr {
+  border-width: 3px;
+}
+
+.dataframe {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.dataframe thead tr {
+    background-color: #000a98;
+    color: #ffffff;
+    text-align: left;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 12px 15px;
+}
+
+.dataframe tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.dataframe tbody tr.fancy-row {
+    padding: 0px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.dataframe tbody tr:last-of-type {
+    border-bottom: 2px solid #000a98;
+}
+
+.dataframe tbody tr.active-row {
+    font-weight: bold;
+    background-color: #000a98;
+    color: #ffffff;
+}
+
+a:link {
+  color: rgb(201, 178, 5);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(70, 5, 201);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.bgimg-3 {
+  background-image: url("https://images.prismic.io/go-ucla-arts/a0aec97c-a26f-4e52-88be-4254fa4f9d06_DAY2_SHOT1_SCULPTUREGARDEN-113_r_cmyk.jpg");
+  min-height: 80%;
+}
+
+.grey-block{
+  color: white;
+  background-color: #777;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.grey-H3{
+  color: white;
+  text-align: right;
+}
+
+.white-block{
+  color: #777;
+  background-color: white;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.black-block{
+  color: white;
+  background-color: #000000;
+  text-align: left;
+  padding: 50px 80px;
+}
+
+.black-H3{
+  color: white;
+  text-align: right;
+}
+
+.white-H3{
+  color: #777;
+  text-align: right;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Attribution -->
+<div style="text-align: right; font-size: .75em;">
+  Dataset consolidation, statistical analyses, and data visualizations by <b><a href="https://zaqari.github.io" target="_blank">@ZP Rosen</a> (6/24/2026)</b>
+</div>
+
+<!-- Title -->
+<div class="bgimg-3" style="min-height: 50%;">
+  <div class="caption" id="title">
+    <span class="border">The way conversation partners work together to generate new semantic information explains how conversation facilitates distributed cognition</span>
+  </div>
+</div>
+
+<div class="black-block">
+  <h3 class="black-H3">Project Overview</h3>
+
+  <!-- details block -->
+  <details>
+    <summary>
+      <b>Description/Goals</b>
+    </summary>
+    <br>
+    <p>It's not always the case, but more often than not people are better when we work together ([9, 23], and for empirical proof, see [5, 10, 17, 27, 28, 35]). A huge part of the reason for this is because when we come together in groups, we can actually converse with one another in an effort to offload some of the cognitive effort we're expending to solve various problems onto our conversation partners [3, 9, 11]. This perspective goes by a few names in cognitive science -- distributed cognition, embedded cognition, the extended mind, and is part of embodied cognition  [9, 12, 23]. But what all of these perspectives share is the following: if you think of yourself a bit like a computer (somewhat of a dubious metaphor but bear with me here), when we're talking with people the parts of that computer aren't just the parts of that are inside your body. The parts of that computer includes all the parts in your conversation partner(s) body(ies) too. You and them are working together and generating new information as part of that interaction (via the words and ideas you all contribute to the conversation), and so because you are working together and enmeshing your thoughts and language behaviors into one big hodge-podge of conversation, it makes sense to think of you and them as a single computer or information generating machine.</p>
+    <p>Now, there are a loads of studies that show that the kinds of things people accomplish when they're working together are only really explainable when you lean into the distributed cognition hypothesis. But there's not as much out there demonstrating how this process works. Especially not in terms of conversation. And as a computational sociolinguist, this kinda made me sad. I want a description of how conversation supports distributed computation! What's the mechanism here! How does it work??</p>
+    <p>I'm not going to say that complex systems science (CSS) holds the answer, but goddamnit it's got a really good framework that we can use to look for a mechanism of distributed cognition. There are a few things from CSS that I want us to grab and hold onto here.</p>
+    <p>First, certain computer systems (think: ways of setting up a computer in terms of its hardware or the software being fed to it) might actually be capable of "universal computation", or solving literally any problem thrown at it if given enough time to do so. If a computer can run indefinitely without, then it can solve any problem in this way. This was first proposed by Allan Turing as the "halting problem", and whenever you hear complex systems people talking about universal computation or universal computational principles, I'll bet you $20 right now that the halting problem is lurking somewhere in what they're saying (if I'm wrong and you'd like to collect your %20 please reach out to Gus Cooney at Dartmouth and ask him for your payout).</p>
+    <p>Certain complex systems are organized in a way that naturally runs head first into the halting problem. One of those organizational schema is fractal scaling. Fractal scaling occurs when something about a system--like, say, semantic information generated by two people talking to eachother during conversation--scales according to a powerlaw distribution [4, 13, 22]. Because of the way you can infinitely zoom into a fractal shape (or one some part of a power-law distribution) and get back the exact same shape, you can't actually stop it from "running". And so, fractals run into the halting problem. And by running into the halting problem, fractal scaling in a complex system means that, on a long enough timeline, a computer that is organized around fractal scaling to generate its outputs might be able to solve any problem.</p>
+    <p>A couple of researchers posited a while back that complex systems comprised of multiple interacting parts, organized around fractal scaling might be able to "spontaneously support" universal computation. Wolfram [34] and Langton [20]. Both researchers were interested in how "self-organization" of complex systems might yield ones that are really good at solving problems, mathematically. If you're wondering why someone might be interested in this sort of thing consider your own brain. Your brain isn't one thing. It's millions of cells al working together, and the result of them working together is your brain. Here is a complex system, then, of multiple interacting parts, that yields something that acts a whole lot like a computer (again, bad metaphor, but useful here). Systems that can spontaneously support universal computation, that can evolve in nature, tend to have fractal scaling. Thank these two eggheads for the math behind that statement later.</p>
+    <p>Langton in particular is of interest to me here. Langton pointed out that if a system of multiple interacting parts (1) generates outputs according to a power-law distribution and (2) shows clear influence of parts of the system on other parts of the system, then it should be capable of universal computation because such a system of parts could maintain "themselves on indefinitely extended transients," or indefinitely long strings of outputs.</p>
+    <p>Langton was pretty limited in what kinds of systems he thought could produce fractal outputs like this. For the longest time, when thinking about how multiple interacting different parts/pieces/agents could come together to form a coherent, singular, information generating machine, most complex systems scientists focused a particular class of complex systems that are formed via self-organized criticality (SOC). SOC occurs when a system is perched close to a phase transition. Think for a moment about something like water boiling into steam. There isn't a characteristic size to how much water converts to steam at the boiling point. It's random. It generates "indefinitely extended transients" of converted molecules of water switching from wet to luxurious spa facial. Technically, someone who is much smarter than me (and probably actually has grant funding) could create a computer using boiling water based on that. But I digress.</p>
+    <p>The thing of it is, phase transitions are rare. Or at least rarer than you might think. And it's not clear that they even apply to all systems that interact with one another. What's the phase transition in two people talking with eachother? Is it the boundary between turns? Is every word a possible phase transition that could be flipped and switched for a new idea in a moment? Looking for a phase transition in conversation is daunting, and probably requires a universal computation machine because it's going to take a while to figure out what it is.</p>
+    <p>But SOC is not the only process that generates systems that produce fractal outputs. Highly Optimized Tolerance (HOT -- gotta love the acronyms here) refers to processes where the goal is to create an information generating system while managing sources of possible havoc in the system [8, 22]. Those sources of havoc could be from the external environment (maybe something is enacting some chaos inducing force on the system), or even from random noise in the interacting pieces themselves (as in making a system using mismatched parts). Whatever the source(s) of noise systems generated via HOT processes (again, love the acronyms), tend to generate power-law (and thus fractal) outputs, the same as processes generated via SOCs. There are some differences--HOT outputs tend to be a little less dramatic in terms of the curl of the fractal than SOC outputs--but both generate fractal outputs and thus both facilitate the formation of systems out of many interacting parts that can support universal computation.</p>
+    <p>This was, I know, a lot. So how does it relate to conversation? Remember earlier what I said that people work together to generate new information, and this makes them better than the sum of their parts? That's how. In conversation you have a system composed of two or more, very noisy, very different (think: differences in wants, needs, beliefs, personal history and even sometimes languages!) "agents" who are working together to have a conversation. That conversation consists of the ideas that each person contributes. And those ideas tend to be related to one another. People naturally align [13, 23], converge [14, 30], or otherwise come up with conceptual pacts [5, 6] about what they're talking about in the moment, and how they're thinking about the things they verbalize. And that serves as a starting point for the spectacular way that conversations naturally end up generating a ton of information because of people naturally working together, building on each others' ideas, and so on.</p>
+    <p>Conversation should act, thus, like a complex system. And one where people take the semantic content of what was said before and then builds on that content to come to new ideas. Langton posited that systems with fractal outputs are good at maintaining memory of prior states in the system (think: prior ideas contributed to a conversation), and rapidly generating new information on the basis of that history (think: conversation spiraling into new topics fluidly with people you love and like talking to). These systems, conversation potentially included, are a bit like building a new lego model out of old lego sets you built in the past. You can take pieces of the old sets to build the new one. Maybe it's only a brick here or there from the old ones, typically. But sometimes you might grab an entire structure like a whole wall or window. Pieces of the old build still exist. But they've been used to generate something new.</p>
+    <p>This project analyzed 5448 conversations. So many conversations... This meant looking at how 15133 different speakers worked together to build new semantic information together in a variety of settings, ranging from Zoom calls [26] to med school study groups [19]. And a big chunk of these conversations weren't in English, either. 1070 of those conversations were in languages other than English, and from a typologically diverse range of language families. It was, and is, a lot of data. Between you and me, the hardest part of this whole project was the data management and data engineering work. But it was and is worth it. Because what we find is that across all languages, people work together as an imperfect (HOT) complex system to rapidly generate new information relative to what was said in old turns, influencing each other and synchronizing how fast that system builds new conversational lego sets of ideas.</p>
+    <p>And, spoiler: That's what we found.</p>
+    
+  </details>
+
+  <!-- details block -->
+  <details>
+    <summary>
+      <b>Methods</b>
+    </summary>
+    <p>There are two tasks we needed to accomplish for this project. (1) measuring how much information is generated when one adds new semantic content to a conversation, relative to an older utterance, and (2) measuring how much changes in the amount of information when comparing two utterances to eachother varies depending on how far into the future they are from the earlier utterance in question (i.e. the utterance whose semantic content is the "old" semantic content that other speakers are building on top of).</p>
+
+    <!-- Convergence-Information -->
+    <details>
+      <summary>
+        <b>Convergence Entropy/Information</b>
+      </summary>
+      <br>
+      <p>A good method for answering question one is Convergence-Entropy as described in [29]. I'm about to hit you with some math, but here's how it works at a high level to start. First, you take an earlier utterance ($x$) and an utterance spoken after it ($y$). You convert all the tokens/words (we label each one using $i$ for the $i^{th}$ token) in the utterance $x$ into what are called token embeddings ($E_{xi}$) using a language model. You do the same think for all the tokens ($j$ -- same logic) in the utterance $y$. In this study, we used a large language model (LLM) to generate embeddings, and research shows that these embeddings are actually really good representations of the semantic meaning of words (even when compared to actual human semantic processing, [16, 18, 24, 33]). This entire process is captured in equation 1.</p>
+      <p>(1)$$E_{xi} = LLM(i \in x)$$</p>
+      <p>Next, you calculate how close the closest token in the utterance $j$ is to each token $i$ in the utterance $x$. You can then convert that distance to a probability using some fancy statistics (a Half-Gaussian, with mean 0, meaning that if the distance between the closes token $j$ in $y$ to a token $i$ in $x$ is 0, then the two tokens mean the same thing). See equation</p>
+      <p>(2)$$P_{xi}(E_y) = P_{\mathcal{N}_{[0,\infty]}} \left( \min_j \bigg(CoE(E_{xi}, E_{yj}) \bigg) \bigg| \mu=0, \sigma \right)$$ </p>
+      <p>If you have a probability, you can calculate information content (thank you Claude Shannon [31]!). Information content is how much extra information you'd need in order to get the meaning of the token $i$ in $x$ in this case. See equation 3.</p>
+      <p>(3) $$I(x;y) = -\sum_{i \in x} \log P_{xi}(E_y)$$ </p>
+      <p>What you're left with is how much semantic information is generated (how much extra statistical work you'd have to do) to get from one set of embeddings to another!</p>
+      <p>It's important to note that the scaling factor in equation 2 is arbitrary. Especially if you're calculating information content like in equation 3. How big or small $\sigma$ is will quantitatively change how big or small the difference in probability is for different distance measurements, but it won't change that there is a difference. It monotonically scales based on $\sigma$. So $\sigma$ changes how sensitive your measurement is, but it won't change the existence of differences, and so long as you're using the same $\sigma$ for all measurement, it means that all those differences will at least be in the same scale, which is important for comparing across different examples and time. </p>
+
+      <!-- Information vs. entropy -->
+      <details>
+        <summary>
+          <b>Some cool nerdy shit</b>
+        </summary>
+        <br>
+        <p>Technically, equation 3 is not entropy. It's what's called the Shannon information. But it has a really important relationship with entropy proper.</p>
+        <p>Shannon defined entropy as the average, expected information for any measurement taken in a system. He also used the letter $H$ to symbolize entropy. Go figure. Even so, that means entropy is by definition this:</p>
+        <p>(4) $$H_x \doteq \lim_{n_{i \in x} \rightarrow \infty} \frac{I(x;y)}{n_{i \in x}}$$</p>
+        <p>But that also means that any measurement of information can be expressed as expected information/entropy plus some error ($\epsilon$)</p>
+        <p>(5) $$I(x;y) = \mathbb{E}[I(x;y) ] + \epsilon$$</p>
+        <p>or, more precisely as</p>
+        <p>(6) $$I(x;y) = (H_x * n_{i \in x}) + \epsilon$$</p>
+        <p>Hold onto that last point for a minute. Trust me.</p>
+      </details>
+
+    </details>
+
+    <!-- Allan Variance -->
+    <details>
+      <summary>
+        <b>Allan Variance</b>
+      </summary>
+      <p>CE gives us a good way to measure information by comparing utterances to one another. But how can we measure how much CE changes across time? One answer is Allan Variance (AVAR or $\sigma^2(\tau)$ for the super technical folks out there). AVAR measure how much something varies from one measurement to the next [2]. Think of it a bit like measuring how squiggly a line is when you move from one dot to the next dot. We can use it here to measure how much CE changes when making a comparison of an utterance $x$ to an utterance $y$ one turn apart, versus when the utterance $x$ and the utterance $y$ are, say, 200 turns apart (which is actually the maximum difference in time in the current study). The more that difference wiggles, the higher the Allan Variance.</p>
+      <p>The formula for it is a little scary looking, but if you know what it's measuring that's enough to start. I also put in $I(x;y)$ here to help understand it in terms of the current study, too.</p>
+      <p>(7) $$\sigma^2(\tau) = \frac{1}{2 \cdot \max(t)^2} \Big\langle (I(x;y_{t+2}) - 2 I(x;y_{t+1}) + I(x;y_{t}))^2 \Big\rangle$$</p>
+      <p>Where $\max(\tau)$ is just the maximum number of turns away that two measurement are from one another, and $\langle \rangle$ just means that the stuff between the triangle brackets is a big vector (or list) of numbers.</p>
+      <p>AVAR has been used quite a lot as a tool for measuring whether changes in some signal are power-law distributed [2, 30, 36]. You see, if changes are really aggressive early on, that'll show up in AVAR. And you can actually calculate the exponent for a power-law distribution via simple regression. If you take the logarithm for your output variable (CE in this case) and the logarithm for the change in time, you can set up a regression equation/problem like this: $\log CE \sim \beta_0 + \alpha \log t$. This allows you to calculate $\alpha$ via regression. And when you exponentiate this, you get the power-law distribution for the actual signal, i.e. $CE \sim e^{\beta_0}t^\alpha$. So if you have AVAR, you can find out the exponent for the power-law distribution itself. </p>
+      <p>There's a couple quick caveats here. If $\alpha \approx 0$, then what you're looking at isn't a power-law distribution or fractal. What you have instead is random, normally distributed noise. Because if $\alpha = 0$, then $t^{\alpha}=1$ no matter what $t$ is, and thus what you get is just random variation around the scaling factor $e^{\beta_0}$. It's just a normal distribution with mean $e^{\beta_0}$. There's another trap though too. If the absolute value of $\alpha$ is close to 1 $|\alpha| \approx 1$, then the distribution linearly scales according to changes in time, because then $t^\alpha = t$. So you get something like $e^{\beta_0}1, e^{\beta_0}2$, etc. for every value to $t$. And that's not a power-law distribution either. So what you need is a power-law exponent that is $\alpha \neq 0$ and  $|\alpha| \neq 1$ to have a power-law distribution and fractal scaling. Neat, right? You have two null hypothesis tests baked into the process, right there.</p>
+
+      <!-- More nerdy shit! -->
+      <details>
+        <summary>
+          <b>Some even more cool nerdy shit</b>
+        </summary>
+        <p>Usefully, because AVAR is the normalized difference in repeated samples from the same signal, comparison across different signals are in the same scale. For example, subsuming the scaling factor $\frac{1}{2 \cdot \max(t)^2}$ into a proportional constant for a moment, we can rewrite $(I(x;y_{t+2}) - 2 I(x;y_{t+1}) + I(x;y_{t}))^2$ to be in terms of expected information, plus some residual ($\epsilon$), per equation 6:</p>
+        <p>(8) $$\bigg(\big((H_x * n_{i \in x}) + \epsilon_{y_{t+2}}\big) - 2 * \big((H_x * n_{i \in x})+ \epsilon_{y_{t+1}}\big) + \big((H_x * n_{i \in x}) + \epsilon_{y_{t}}\big)\bigg)^2$$</p>
+        <p>This can be further simplified as follows:</p>
+        <p>(9) $$= \big((H_x * n_{i \in x}) + \epsilon_{y_{t+2}} - 2(H_x * n_{i \in x}) -  2 \epsilon_{y_{t+1}} + (H_x * n_{i \in x}) + \epsilon_{y_{t}}\big)^2$$</p>
+        <p>(10) $$= (\epsilon_{y_{t+2}} - 2\epsilon_{y_{t+1}} + \epsilon_{y_{t}})^2$$</p>
+        <p>Thus, calculation of AVAR for a repeatedly sampled, continuous signal in the current case, is equivalent to the scaled fluctuation in residual information.</p>
+      </details>
+
+    </details>
+
+    <details>
+      <summary><b>Mutual influence/complexity matching</b></summary>
+      <p>An important part of Langton's definition of what makes a complex system capable of distributed computation across its parts is demonstrating that the pieces of that system are influencing eachother's behavior. Otherwise, there's no proof that they're ultimately working together.</p>
+      <p>It's hard to show that power-law scaling (and thus fractal information generation) are related between the parts of a system. Langton is a bit of a cheater, here, because all the systems he studied were simulated -- he could literally write into the program itself "this part talks to this part, make it so!" But in the real world, we need actual proof that the pieces are talking. And even more specifically, we need to show in our case that power-law scaling in one part of the system affects the power-law scaling in another part of that system.</p>
+      <p>Enter the idea of complexity matching [21]. Complexity matching is the idea that entire distributions of behavior influence in part of a system influence the distributions on behavior in the other part. It's a comparison thus between two distributions. When complexity matching is 0, it means the two systems are synchronized in their behavior. Because it means there is no difference in how the two distributions themselves behave. But systematic differences are still useful and important here. Because when two systems have systematic differences in behaviors (like the systems always being some value like 2 apart), then they're actually synchronized, and one demonstrably influences the other.</p>
+      <p>This definition was important to Mahmoodi because Mahmoodi was interested in coordinated behavior in very different systems or between radically different kinds of things. Think: measuring how the behavior of waggling your fingers influences the behavior of tapping your toes. That's why he focused on differences in whole distributions (because fingers and toes don't move the same, but how they move relative to what affordances in movement they have can become influenced by one another). Other folks though have used complexity matching in ways like tracking how people manage rate of speaking and onset times [1], though, amongst a whole fleet of other things.</p>
+      <p>For us, we test whether the difference between speakers' power-law distributed rates of information generation relative to their own prior utterances and their conversation partners' rates of information generation systematically differ or are the same. This actually is easy to do in the current study, given that it's a comparison between two clearly different, but potentially related behaviors, and we measure the difference in distributions using a paired t-test for this reason.</p>
+    </details>
+    <p>If you want to see what our entire process looks like, using all of these steps from start to finish, check out this visualization, as well!</p>
+    <details>
+      <summary><b>Complete data processing visualization</b></summary>
+      <embed src="./process.html" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    </details>
+  </details>
+
+</div>
+
+<div class="white-block">
+  <h3 class="white-H3">Fractal scaling in large amounts of english conversation data</h3>
+
+  <!-- details block -->
+  <details>
+    <summary> <b>Materials</b> </summary>
+    <br>
+    <p>The data for the english, monolingual study we did concsisted of 4,378 conversations between 12,578 speakers, and comparing utterances $x$ and $y$ a maximum of 200 turns away from eachother, making a grand total of 261,254,181 datapoints we had to analyze.</p>
+    <p>If you're looking for descriptive stats, check out...</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vStxHiudsr9vkweSs-Yq3Yn87ysEsHLYtDIPwlxyNm0sZOSpzVEWQonmuowJ3RaovprNwUIzreYlDAI/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+  </details>
+
+  <!-- results block -->
+  <details>
+    <summary><b>Results</b></summary>
+    <br>
+    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling: ($\bar{\alpha}=-0.31,\ SE=0.00576,\ t(10839)=-53.87,\ p<1e^{-5}$) The same is true for their partners, though it's much closer to random on average ($\bar{\alpha}=-0.168,\ SE=0.005,\ t(31445)=-37.29,\ p<1e^{-5}$).</p>
+    <p>These exponents are by and large significantly different from just being linear scaling, too. For the self, we find that $(\bar{\alpha} - -1)=0.666,\ SE=0.006,\ t(2925)=111.2,\ p<1e^{-5}$, and for conversation partners, it turns out that $(\bar{\alpha} - -1)=0.768,\ SE=0.005,\ t(5002)=145.56,\ p<1e^{-5}$.</p>
+    <p>Most folks aren't just generating random amounts of information. They're rapidly creating new information early on, but those changes scale over time fractally. Nor are people doing linear scaling either.</p>
+    <p>Paranoia is the mother of all sanity checks. So we went ahead and tested what might happen if we null permuted both utterances across conversations (so no semantic relationship between utterances), and permuted the temporal order of utterances too, no less. Our truly random, same speaker seems generally random from a power-law perspective ($\bar{\alpha}=-0.00720,\ SE=0.00499,\ n=5351$). And so does our random conversation partner ($\bar{\alpha}=-0.00143,\ SE=0.00387,\ n=7538$). And, as expected there is a statistically significant difference between the observed same speakers' information generation behavior and their null counterpart ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.303,\ t(15513.3)=-39.77,\ p<1e^{-5}$), as well as for their shadow (or null) conversation partner ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.167,\ t(29073.02)=-28.07,\ p<1e^{-5}$)</p>
+    <p>Okay okay. But do speakers coordinate with one another? Do they influence eachother? One way to test that is complexity matching like we established in our blurb up top. And the answer is... well, people didn't complexity match. But they did complexity synchronize. In other words, folks are never the same level of random, but they're tidally locked at related levels of randomness (t-test: $\Delta_{\alpha_{sp(y) \neq sp(x)};\alpha_{sp(y) = sp(x)}}=.0499,\ t(26358)=8.88,\ p<1e-{05}$; non-parametric alternative Wilcoxan Signed-Rank test: $W=155643236.00,\ p <1e^{-5}$), which is still evidence of co-influence. It's just a very complicated dance of co-influence.</p>
+    <p>Check out the visualization below for what the distribution of power-law exponents looked like per speaker (of the  utterance $x$), per conversation, and per conversation partner (the speaker of the utterance $y$).</p>
+    <p></p>
+    <embed src="./eng.html" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    <p>And individual statistics per corpus are included too in the following table.</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSyx3HITvfC0M746Rz8a8El6NvX_o6do5g7HdqgDvIecniwS8PPKq8sjDNwzeHSYP4xxuThBYfMsf5w/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+  </details>
+
+</div>
+
+<div class="grey-block">
+  <h3 class="grey-H3">Fractal scaling in crosslinguistic conversation data</h3>
+
+  <!-- details block -->
+  <details>
+    <summary> <b>Materials</b> </summary>
+    <br>
+    <p>The data for our crosslinguistic study consisted of 1,286 (with some repeated conversations in English) conversations between 3,020 speakers, and comparing utterances $x$ and $y$ a maximum of 200 turns away from eachother, making a grand total of 100,930,208 datapoints we had to analyze.</p>
+    <p>If you're looking for descriptive stats, check out...</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQjDeUd-dSz6wJ7YQmg_RZ2VtbAB_zIgUsZtIOnwrwH3B3S5qDI_MGQMXwUNA9jNeX74I2UmfarIHDV/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+  </details>
+
+  <!-- results block -->
+  <details>
+    <summary><b>Results</b></summary>
+    <br>
+    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling: ($\bar{\alpha}=-0.31,\ SE=0.00576,\ t(10839)=-53.87,\ p<1e^{-5}$) The same is true for their partners, though it's much closer to random on average ($\bar{\alpha}=-0.168,\ SE=0.005,\ t(31445)=-37.29,\ p<1e^{-5}$).</p>
+    <p>These exponents are by and large significantly different from just being linear scaling, too. For the self, we find that $(\bar{\alpha} - -1)=0.666,\ SE=0.006,\ t(2925)=111.2,\ p<1e^{-5}$, and for conversation partners, it turns out that $(\bar{\alpha} - -1)=0.768,\ SE=0.005,\ t(5002)=145.56,\ p<1e^{-5}$.</p>
+    <p>We get the same thing qualitatively here in our crosslinguistic study as we did in our english monolingual study. People aren't randomly generating new information, nor are they linearly generating new information. They're doing it fractally.</p>
+    <p>We again tested what might happen if we null permuted the semantics and temporal order of the data. Our truly random, same speaker seems generally random from a power-law perspective ($\bar{\alpha}=-0.00720,\ SE=0.00499,\ n=5351$). And so does our random conversation partner ($\bar{\alpha}=-0.00143,\ SE=0.00387,\ n=7538$). And, as expected there is a statistically significant difference between the observed same speakers' information generation behavior and their null counterpart ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.303,\ t(15513.3)=-39.77,\ p<1e^{-5}$), as well as for their shadow (or null) conversation partner ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.167,\ t(29073.02)=-28.07,\ p<1e^{-5}$)</p>
+    <p>And again, do speakers influence eachother? Again, they complexity synchronize (t-test: $\Delta_{\alpha_{sp(y) \neq sp(x)};\alpha_{sp(y) = sp(x)}}=.0499,\ t(26358)=8.88,\ p<1e-{05}$; non-parametric alternative Wilcoxan Signed-Rank test: $W=155643236.00,\ p <1e^{-5}$), which is still evidence of co-influence. It's just a very complicated dance of co-influence.</p>
+    <p>Check out the visualization below for what the distribution of power-law exponents looked like per speaker (of the utterance $x$), per conversation, and per conversation partner (the speaker of the utterance $y$).</p>
+    <p></p>
+    <embed src="./xling.html" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    <p>And individual statistics per corpus are included too in the following table.</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTC6jzyrzRrm56ZrZXSHg63z38uvIyFpz1SuuMwdFoyf8ThUpD1ZBDS5CseFXGhnhxADlKfY1XjQUV8/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+  </details>
+
+</div>
+
+<div class="black-block">
+  <h3 class="black-H3">References</h3>
+  <details>
+    <summary>Methods & study references</summary>
+    <p>[1] Drew H. Abney et al. "Complexity Matching in Dyadic Conversation." In: Journal of Experimental Psychology: General 143.6 (2014), pp. 2304-2315. ISSN: 1939-2222, 0096-3445. DOI: 10.1037/xge0000021. </p>
+    <p>[2] David W. Allan and Judah Levine. "A Historical Perspective on the Development of the Allan Variances and Their Strengths and Weaknesses". In: IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control 63.4 (2016), pp. 513-519. ISSN: 0885-3010. DOI: 10.1109/TUFFC.2016.2524687. </p>
+    <p>[3] Edgar J Andrade-Lotero et al. "The Division of Linguistic Labour for Offloading Conceptual Understanding". In: Philosophical Transactions of the Royal Society B: Biological Sciences 378.1870 (2022), p. 20210360. DOI: 10.1098/rstb.2021.0360.</p>
+    <p>[4] Lenore Blum, Mike Shub, and Steve Smale. "On a Theory of Computation and Complexity Over the Real Numbers: Np-Completeness, Recursive Functions and Universal Machines". In: Buletin of American Mathematical Society 21.1 (1989), pp. 1-46. DOI: 10.1142/9789812792839_0013. </p>
+    <p>[5] Veronica Boyce et al. "Interaction Structure Constrains the Emergence of Conventions in Group Communication". In: Proceedings of the National Academy of Sciences 121.28 (2024), e2403888121. DOI: 10.1073/pnas. 2403888121. </p>
+    <p>[6] Susan E. Brennan and Herbert H. Clark. "Conceptual Pacts and Lexical Choice in Conversation". In: Journal of Experimental Psychology. Learning, Memory, and Cognition 22.6 (1996), pp. 1482-1493. ISSN: 0278-7393. DOI: 10.1037//0278-7393.22.6.1482.</p>
+    <p>[7] Susan E. Brennan, Alexia Galati, and Anna Kuhlen. "Two Minds, One Dialog: Coordinating Speaking and Understanding". In: The Psychology of Learning and Motivation: Advances in Research and Theory. Vol. 53. Psychology of Learning and Motivation. Elsevier, 2010, pp. 301-344. ISBN: 978-0-12-380906-3. DOI: 10.1016/ C2009-0-62209-1. </p>
+    <p>[8] J. M. Carlson and John Doyle. "Highly Optimized Tolerance: A Mechanism for Power Laws in Designed Systems". In: Physical Review E 60.2 (1999), pp. 1412-1427. ISSN: 1063-651X, 1095-3787. DOI: 10.1103/ PhysRevE.60.1412. </p>
+    <p>[9] Andy Clark and David Chalmers. "The Extended Mind". In: Analysis 58.1 (1998), pp. 7-19. ISSN: 0003-2638. JSTOR: 3328150. </p>
+    <p>[10] Moreno I. Coco, Rick Dale, and Frank Keller. "Performance in a Collaborative Search Task: The Role of Feedback and Alignment". In: Topics in Cognitive Science 10.1 (2018), pp. 55-79. ISSN: 1756-8757, 17568765. DOI: 10.1111/tops.12300. </p>
+    <p>[11] Sara De Felice et al. "Learning from Others Is Good, with Others Is Better: The Role of Social Interaction in Human Acquisition of New Knowledge". In: Philosophical Transactions of the Royal Society B: Biological Sciences 378.1870 (2020), p. 20210357. ISSN: 0962-8436. DOI: 10.1098/rstb.2021.0357. </p>
+    <p>[12] Mark Dingemanse et al. "Beyond Single-Mindedness: A Figure-Ground Reversal for the Cognitive Sciences". In: Cognitive Science 47.1 (2023), e13230. ISSN: 1551-6709. DOI: 10.1111/cogs.13230. </p>
+    <p>[14] Simon Garrod and Martin J. Pickering. "Why Is Conversation so Easy?" In: Trends in Cognitive Sciences 8.1 (2004), pp. 8-11. ISSN: 1364-6613. DOI: 10.1016/j.tics.2003.10.016. </p>
+    <p>[15] Howard Giles, America L. Edwards, and Joseph B. Walther. "Communication Accommodation Theory: Past Accomplishments, Current Trends, and Future Prospects". In: Language Sciences 99 (2023), p. 101571. ISSN: 03880001. DOI: 10.1016/j.langsci.2023.101571. </p>
+    <p>[16] Ariel Goldstein et al. "Shared Computational Principles for Language Processing in Humans and Deep Language Models". In: Nature Neuroscience 25.3 (2022), pp. 369-380. ISSN: 1097-6256, 1546-1726. DOI: 10. 1038/s41593-022-01026-4. </p>
+    <p>[17] Robert D. Hawkins, Michael C. Frank, and Noah D. Goodman. "Characterizing the Dynamics of Learning in Repeated Reference Games". In: Cognitive Science 44.6 (2020), e12845. ISSN: 0364-0213, 1551-6709. DOI: 10.1111/cogs.12845. </p>
+    <p>[18] Eva Huber et al. "Surprisal From Language Models Can Predict ERPs in Processing Predicate-Argument Structures Only If Enriched by an Agent Preference Principle". In: Neurobiology of Language 5.1 (2024), pp. 167- 200. ISSN: 2641-4368. DOI: 10.1162/nol_a_00121. </p>
+    <p>[19] Timothy Koschmann and Curtis LeBaron. "Learner Articulation as Interactional Achievement: Studying the Conversation of Gesture". In: Cognition and Instruction 20.2 (2002), pp. 249-282. ISSN: 0737-0008. DOI: 10.1207/S1532690XCI2002_4. </p>
+    <p>[20] Chris G. Langton. "Computation at the Edge of Chaos: Phase Transitions and Emergent Computation". In: Physica D: Nonlinear Phenomena 42.1 (1990), pp. 12-37. ISSN: 0167-2789. DOI: 10.1016/0167-2789(90) 90064-V. </p>
+    <p>[21] Korosh Mahmoodi, Bruce J. West, and Paolo Grigolini. Complexity Matching and Requisite Variety. 2019. DOI: 10.48550/arXiv.1806.08808. arXiv: 1806.08808</p>
+    <p>[22] Dimitrije Markovic and Claudius Gros. "Power Laws and Self-Organized Criticality in Theory and Nature". In:' Physics Reports. Power Laws and Self-Organized Criticality in Theory and Nature 536.2 (2014), pp. 41-74. ISSN: 0370-1573. DOI: 10.1016/j.physrep.2013.11.002. </p>
+    <p>[23] Kourken Michaelian and John Sutton. "Distributed Cognition and Memory Research: History and Current Directions". In: Review of Philosophy and Psychology 4.1 (2013), pp. 1-24. ISSN: 1878-5166. DOI: 10.1007/ s13164-013-0131-x. </p>
+    <p>[24] Satoshi Nishida et al. "Behavioral Correlates of Cortical Semantic Representations Modeled by Word Vectors". In: PLOS Computational Biology 17.6 (2021), e1009138. ISSN: 1553-7358. DOI: 10.1371/journal.pcbi. 1009138. </p>
+    <p>[25] Martin J. Pickering and Simon Garrod. "Toward a Mechanistic Psychology of Dialogue". In: Behavioral and Brain Sciences 27.2 (2004), pp. 169-190. ISSN: 0140-525X, 1469-1825. DOI: 10.1017/S0140525X04000056. </p>
+    <p>[26] Andrew Reece et al. "The CANDOR Corpus: Insights from a Large Multimodal Dataset of Naturalistic Conversation". In: Science Advances 9.13 (2023), eadf3197. DOI: 10.1126/sciadv.adf3197. </p>
+    <p>[27] Jennifer M. Roche, Rick Dale, and Gina M. Caucci. "Doubling up on Double Meanings: Pragmatic Alignment". In: Language and Cognitive Processes 27.1 (2012), pp. 1-24. ISSN: 0169-0965, 1464-0732. DOI: 10.1080/ 01690965.2010.509929. </p>
+    <p>[28] Jennifer M. Roche, Arkady Zgonnikov, and Laura M. Morett. "Cognitive Processing of Miscommunication in Interactive Listening: An Evaluation of Listener Indecision and Cognitive Effort". In: Journal of speech, language, and hearing research: JSLHR 64.1 (2021), pp. 159-175. ISSN: 1558-9102. DOI: 10.1044/2020_ JSLHR-20-00128.</p>
+    <p>[29] Zachary P Rosen and Rick Dale. "BERTs of a Feather: Studying Inter- and Intra-Group Communication via Information Theory and Language Models". In: Behavior Research Methods (2023). ISSN: 1554-3528. DOI: 10.3758/s13428-023-02267-2. </p>
+    <p>[30] Noah Schlossberger and David Howe. "Analysis of Powers-of-Two Calculations of the Allan Variance and Their Relation to the Standard Variance". In: 2019 Joint Conference of the IEEE International Frequency Control Symposium and European Frequency and Time Forum (EFTF/IFC). Orlando, FL, USA: IEEE, 2019, pp. 1-5. ISBN: 978-1-5386-8305-7. DOI: 10.1109/FCS.2019.8856078. </p>
+    <p>[31] C E Shannon. "A Mathematical Theory of Communication". In: The Bell System Technical Journal 27 (1948), p. 55.</p>
+    <p>[32] Jordan Soliz, Howard Giles, and Jessica Gasiorek. "Communication Accommodation Theory: Converging Toward an Understanding of Communication Adaptation in Interpersonal Relationships". In: Engaging Theories in Interpersonal Communication: Multiple Perspectives. Ed. by Dawn O Braithwaite and Paul Schrodt. 3rd ed. New York: Routledge, 2021, pp. 130-142. ISBN: 978-1-003-19551-1. DOI: 10.4324/9781003195511. </p>
+    <p>[33] Akira Utsumi. "Exploring What Is Encoded in Distributional Word Vectors: A Neurobiologically Motivated Analysis". In: Cognitive Science 44.6 (2020), e12844. ISSN: 1551-6709. DOI: 10.1111/cogs.12844. </p>
+    <p>[34] Stephen Wolfram. "Universality and Complexity in Cellular Automata". In: Physica D: Nonlinear Phenomena 10.1 (1984), pp. 1-35. ISSN: 0167-2789. DOI: 10.1016/0167-2789(84)90245-8. </p>
+    <p>[35] Si On Yoon and Sarah Brown-Schmidt. "Adjusting Conceptual Pacts in Three-Party Conversation." In: Journal of Experimental Psychology: Learning, Memory, and Cognition 40.4 (2014), pp. 919-937. ISSN: 1939-1285, 0278-7393. DOI: 10.1037/a0036161. </p>
+    <p>[36] Nien F. Zhang. "Allan Variance of Time Series Models of Measurement Data". In: Metrologia (2008). </p>
+  </details>
+
+  <details>
+    <summary>Corpus Resource References</summary>
+    <p>[1] Saul Albert, Laura de Ruiter, and J.P. de Ruiter. CABNC: The Jeffersonian Transcription of the Spoken British National Corpus. https://saulalbert.github.io/CABNC/., 2015.</p>
+    <p>[2] Sara Beaudrie. CABank Spanish CallFriend Caribbean Corpus. 2004. DOI: 10.21415/T5810W. 
+    <p>[3] Sara Beaudrie. CABank Spanish CallFriend Corpus. 2004. DOI: 10.21415/T5ZC76. </p>
+    <p>[4] Nikolinka Collier. ClassBank English DISPEL Corpus. 2004. DOI: 10.21415/T50K7K. </p>
+    <p>[5] John DuBois. CABank English SCSAE Corpus. 2004. DOI: 10.21415/T5VG6X. </p>
+    <p>[6] Carl Frederiksen and J. Donin. "Coaching and the Development of Expertise: Designing Computer Coaches to Emulate Human Tutoring in Complex Domains". In: Développement, Integration, et Evaluation Des Technologies de Formation et d’apprentissage. Ed. by S Pierre. 2005, pp. 179–219.</p>
+    <p>[7] A.C. Graesser, N. Person, and J. Huber. "Mechanisms That Generate Questions." In: Questions and Information Systems. Ed. by T.W. Lauer, A.C. Peacock, and A.C. Graesser. Lawrence Erlbaum Assiciates, Inc., 1992, pp. 167–187. </p>
+    <p>[8] Michael Haugh and Wei-Lin Chang. "Collaborative Creation of Spoken Language Corpora". In: (2013). </p>
+    <p>[9] Zelda Kahan Newman. "More V2 Attrition: Discourse Markers in the Narratives of New York Hasidim". In: Germanic Heritage Languages in North America: Acquisition, Attrition and Change. Ed. by Janne Bondi Johannessen and Joseph C. Salmons. Studies in Language Variation. John Benjamins Publishing Company, 2015, pp. 178–198. ISBN: 978-90-272-3498-8 978-90-272-6819-8. DOI: 10.1075/silv.18.08kah. </p>
+    <p>[10] Tyler Kendall and Charlie Farrington. "Managing Sociolinguistic Data with the Corpus of Regional African American Language (CORAAL)". In: The Open Handbook of Linguistic Data Management. Ed. by Andrea L. Berez-Kroeker et al. The MIT Press, 2022, pp. 185–194. ISBN: 978-0-262-36607-6. DOI: 10.7551/mitpress/ 12200.003.0019. </p>
+    <p>[11] Ko, Eon-Suk et al. Korean Telephone Conversations Transcripts. 2003. DOI: 10.35111/92VJ-WG93. </p>
+    <p>[12] Timothy Koschmann and Curtis LeBaron. "Learner Articulation as Interactional Achievement: Studying the Conversation of Gesture". In: Cognition and Instruction 20.2 (2002), pp. 249–282. ISSN: 0737-0008. DOI: 10.1207/S1532690XCI2002_4. </p>
+    <p>[13] Jelena Kuvac Kraljeviˇ c and Gordana Hržica. "Croatian Adult Spoken Language Corpus (HrAL)". In:'	Fluminensia: Journal for philological research 28.2 (2016).</p>
+    <p>[14] Katri Leino et al. FinChat: Corpus and Evaluation Setup for Finnish Chat Conversations on Everyday Topics. 2020. DOI: 10.48550/arXiv.2008.08315. arXiv: 2008.08315 [cs]. </p>
+    <p>[15] Linguistic Data Consortium. CABank Chinese CallHome Corpus. 2013. DOI: 10.21415/T54022.</p>
+    <p>[16] Linguistic Data Consortium. CABank English CallHome Corpus. 2013. DOI: 10.21415/T5KP54.</p>
+    <p>[17] Linguistic Data Consortium. CABank German CallHome Corpus. 2013. DOI: 10.21415/T56P4B.</p>
+    <p>[18] Linguistic Data Consortium. CABank Mandarin CallFriend Mainland Corpus. 2004. DOI: 10.21415/T5R38Z. </p>
+    <p>[19] Linguistic Data Consortium. CABank Spanish CallHome Corpus. 2013. DOI: 10.21415/T51K54. </p>
+    <p>[20] Grace Qiyuan Miao et al. "A Deep Neural Network Approach for Integrating Neural and Behavioral Signals: Multimodal Investigation with fNIRS Hyperscanning and Facial Expressions". In: Proceedings of the Annual Meeting of the Cognitive Science Society 46.0 (2024). </p>
+    <p>[21] Lorenza Mondada. CABank French CallFriend Corpus. 2004. DOI: 10.21415/T5T59N. </p>
+    <p>[22] Dennis Norrick. CABank English SCoSE Corpus. 2004. DOI: 10.21415/T5DC77. </p>
+    <p>[23] Andrew Reece et al. "The CANDOR Corpus: Insights from a Large Multimodal Dataset of Naturalistic Conversation". In: Science Advances 9.13 (2023), eadf3197. DOI: 10.1126/sciadv.adf3197. </p>
+    <p>[24] R.C. Simpson et al. MICASE Manual. Ann Arbor, MI: The Regents of the University of Michigan, 1999.</p>
+    <p>[25] Malcah Yaeger-Dror. CABank English CallFriend Northern US Corpus. 2004. DOI: 10.21415/T5B61M. </p>
+    <p>[26] Malcah Yaeger-Dror. CABank English CallFriend Southern US Corpus. 2004. DOI: 10.21415/T5S880.</p>
+  </details>
+
+</div>
+</body>
+</html>
