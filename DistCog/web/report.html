@@ -318,16 +318,15 @@ h3 {
   <details>
     <summary><b>Results</b></summary>
     <br>
-    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling: ($\bar{\alpha}=-0.31,\ SE=0.00576,\ t(10839)=-53.87,\ p<1e^{-5}$) The same is true for their partners, though it's much closer to random on average ($\bar{\alpha}=-0.168,\ SE=0.005,\ t(31445)=-37.29,\ p<1e^{-5}$).</p>
-    <p>These exponents are by and large significantly different from just being linear scaling, too. For the self, we find that $(\bar{\alpha} - -1)=0.666,\ SE=0.006,\ t(2925)=111.2,\ p<1e^{-5}$, and for conversation partners, it turns out that $(\bar{\alpha} - -1)=0.768,\ SE=0.005,\ t(5002)=145.56,\ p<1e^{-5}$.</p>
-    <p>Most folks aren't just generating random amounts of information. They're rapidly creating new information early on, but those changes scale over time fractally. Nor are people doing linear scaling either.</p>
-    <p>Paranoia is the mother of all sanity checks. So we went ahead and tested what might happen if we null permuted both utterances across conversations (so no semantic relationship between utterances), and permuted the temporal order of utterances too, no less. Our truly random, same speaker seems generally random from a power-law perspective ($\bar{\alpha}=-0.00720,\ SE=0.00499,\ n=5351$). And so does our random conversation partner ($\bar{\alpha}=-0.00143,\ SE=0.00387,\ n=7538$). And, as expected there is a statistically significant difference between the observed same speakers' information generation behavior and their null counterpart ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.303,\ t(15513.3)=-39.77,\ p<1e^{-5}$), as well as for their shadow (or null) conversation partner ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.167,\ t(29073.02)=-28.07,\ p<1e^{-5}$)</p>
-    <p>Okay okay. But do speakers coordinate with one another? Do they influence eachother? One way to test that is complexity matching like we established in our blurb up top. And the answer is... well, people didn't complexity match. But they did complexity synchronize. In other words, folks are never the same level of random, but they're tidally locked at related levels of randomness ($\Delta_{\alpha_{sp(y) \neq sp(x)};\alpha_{sp(y) = sp(x)}}=.0499,\ t(26358)=8.88,\ p<1e-{05}$; non-parametric alternative Wilcoxan Signed-Rank test: $W=155643236.00,\ p <1e^{-5}$), which is still evidence of co-influence. It's just a very complicated dance of co-influence.</p>
-    <p>Check out the visualization below for what the distribution of power-law exponents looked like per speaker (of the  utterance $x$), per conversation, and per conversation partner (the speaker of the utterance $y$).</p>
+    <p>The actual numbers, including the power-law scaling exponents, statistical significance, and other descriptive statistics are all in this table:</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSyx3HITvfC0M746Rz8a8El6NvX_o6do5g7HdqgDvIecniwS8PPKq8sjDNwzeHSYP4xxuThBYfMsf5w/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling. The same is true for their partners, though it's a little less extreme.</p>
+    <p>In terms of complexity matching, we don't find that people's power-law exponents are equivalent to their partners when dealing with the ideas they (as in the speaker of the utterance $x$) contributed to the conversation themselves. But it does look like there is some synchrony there that is significant!</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTmpt6vz6owucjjRQPTo3wtbHm0k06Y_dnJBGjPJhmUW9JdvNBeIiYiLZEfOf0mW3pcvvpoW2VVoGl/pubhtml?gid=0" style="width: 100%; height: 200px; border: none;" frameborder="0"/>
     <p></p>
     <embed src="./eng.html" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
     <p>And individual statistics per corpus are included too in the following table.</p>
-    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSyx3HITvfC0M746Rz8a8El6NvX_o6do5g7HdqgDvIecniwS8PPKq8sjDNwzeHSYP4xxuThBYfMsf5w/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    
   </details>
 
 </div>
@@ -348,16 +347,14 @@ h3 {
   <details>
     <summary><b>Results</b></summary>
     <br>
-    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling: ($\bar{\alpha}=-0.31,\ SE=0.00576,\ t(10839)=-53.87,\ p<1e^{-5}$) The same is true for their partners, though it's much closer to random on average ($\bar{\alpha}=-0.168,\ SE=0.005,\ t(31445)=-37.29,\ p<1e^{-5}$).</p>
-    <p>These exponents are by and large significantly different from just being linear scaling, too. For the self, we find that $(\bar{\alpha} - -1)=0.666,\ SE=0.006,\ t(2925)=111.2,\ p<1e^{-5}$, and for conversation partners, it turns out that $(\bar{\alpha} - -1)=0.768,\ SE=0.005,\ t(5002)=145.56,\ p<1e^{-5}$.</p>
-    <p>We get the same thing qualitatively here in our crosslinguistic study as we did in our english monolingual study. People aren't randomly generating new information, nor are they linearly generating new information. They're doing it fractally.</p>
-    <p>We again tested what might happen if we null permuted the semantics and temporal order of the data. Our truly random, same speaker seems generally random from a power-law perspective ($\bar{\alpha}=-0.00720,\ SE=0.00499,\ n=5351$). And so does our random conversation partner ($\bar{\alpha}=-0.00143,\ SE=0.00387,\ n=7538$). And, as expected there is a statistically significant difference between the observed same speakers' information generation behavior and their null counterpart ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.303,\ t(15513.3)=-39.77,\ p<1e^{-5}$), as well as for their shadow (or null) conversation partner ($\Delta_{\bar{\alpha}_{obs};\bar{\alpha}_{null}}=-0.167,\ t(29073.02)=-28.07,\ p<1e^{-5}$)</p>
-    <p>Do speakers influence eachother in different languages similar to how they do in our English monolingual dataset? Again, they complexity synchronize ($\Delta_{\alpha_{sp(y) \neq sp(x)};\alpha_{sp(y) = sp(x)}}=.0691,\ t(4779)=10.65,\ p<1e-{05}$; non-parametric alternative Wilcoxan Signed-Rank test: $W=3772361.00,\ p <1e^{-5}$), which is still evidence of co-influence. It's just a very complicated dance of co-influence.</p>
-    <p>Check out the visualization below for what the distribution of power-law exponents looked like per speaker (of the utterance $x$), per conversation, and per conversation partner (the speaker of the utterance $y$).</p>
+    <p>The actual numbers, including the power-law scaling exponents, statistical significance, and other descriptive statistics are all in this table:</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTC6jzyrzRrm56ZrZXSHg63z38uvIyFpz1SuuMwdFoyf8ThUpD1ZBDS5CseFXGhnhxADlKfY1XjQUV8/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    <p>Across all speakers and conversations, power-law scaling for how speakers generate new information relative to <em>their own</em> old turns exhibits power-law scaling. The same is true for their partners, though it's a little less extreme.</p>
+    <p>In terms of complexity matching, we don't find that people's power-law exponents are equivalent to their partners when dealing with the ideas they (as in the speaker of the utterance $x$) contributed to the conversation themselves. But it does look like there is some synchrony there that is significant!</p>
+    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS66UKoVwTKYseVzRiwxkCzWlg5Ot_eBq-Elu3ZpIn71E4lihECLFq50oGZeWPq9tvMDTdTBzPDmiPO/pubhtml?gid=0" style="width: 100%; height: 200px; border: none;" frameborder="0"/>
     <p></p>
     <embed src="./xling.html" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
-    <p>And individual statistics per corpus are included too in the following table.</p>
-    <embed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTC6jzyrzRrm56ZrZXSHg63z38uvIyFpz1SuuMwdFoyf8ThUpD1ZBDS5CseFXGhnhxADlKfY1XjQUV8/pubhtml?gid=0" style="width: 100%; height: 500px; border: none;" frameborder="0"/>
+    
   </details>
 
 </div>
