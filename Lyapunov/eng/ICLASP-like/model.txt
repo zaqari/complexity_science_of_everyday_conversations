@@ -1,0 +1,23 @@
+model{
+    # #variance
+    eta ~ dunif(.01,10)
+
+    # #params
+    beta ~ dunif(-1,1)
+    phi ~ dunif(-10,10)
+    b0 ~ dnorm(b0_mu, 1/pow(eta,2))
+
+    #per speaker (and per partner) variance
+    # for (s in 1:KSPEAKER){
+        # svar[s] ~ dnorm(eta, 1)
+        # ovar[s] ~ dnorm(gamma, 1)
+        # svar[s] ~ dunif(-1,1)
+        # ovar[s] ~ dunif(-1,1)
+    # }
+
+    # #predicting values
+    for (r in 1:ROWS){
+        survey_var[r] ~ dnorm( b0 + ((slope[r] * beta) + (d0[r] * phi)), 1/lv)
+    }
+}
+
