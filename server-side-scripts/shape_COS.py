@@ -5,18 +5,7 @@ import os
 from datetime import datetime as dt
 import re
 from itertools import product
-# If on the remote server
-# from kgen2.mutual_information.end_to_end_analysis import analyzer
-# from kgen2.mutual_information.fastGraph import fastGraphWithAnalyzer as FGA
-# from kgen2.mutual_information.entropy import entropy_cdf
-# from kgen2.LM.LM.RoBERTa import RoBERTa
-# from shared.CEDA import ceda_model
-from kgen2.CEDA.calc._bypass._experimental.deconstructed_cos import processor
-
-# from kgen2.CEDA.calc.wv_model import wv
-# from kgen2.CEDA.calc.fastGraph import justCosinesFastGraph as FGA
-# from kgen2.CEDA.calc.entropy import just_cosines
-# from kgen2.CEDA.calc.end_to_end_analysis import analyzer
+from convergence_entropy.CEDA.calc._bypass._experimental.deconstructed_cos import processor
 
 ###########################################################################################
 # Basic set-up
@@ -30,7 +19,7 @@ DEV = 'cuda'
 
 start = dt.now()
 
-PATH = '/home/zprosen/d/shapeoflang3/'
+PATH = './d/shapeoflang/'
 
 RAW_PATH = os.path.join(PATH, 'server_ready')
 
@@ -47,9 +36,6 @@ print(PATH,  '\n', level, '\n\n')
 ###########################################################################################
 # Main script
 ###########################################################################################
-
-
-
 
 ###########################################################################################
 ### Data set-up
@@ -69,6 +55,10 @@ meta_data_cols = [
     'conversation_id',
     'corpus'
 ]
+
+# language model to be used
+wv_model_name = 'xlm-roberta-base'
+
 
 #############################################################################
 ### starting from a saved checkpoint!
@@ -99,20 +89,11 @@ with torch.no_grad():
                     sep='\t'
                 )
 
-            ########## ID if xling file or not
-            # if 'xling-' in submission_id:
-            #     wv_model_name = 'xlm-roberta-base'
-            # else:
-            #     wv_model_name = 'roberta-base'
-            wv_model_name = 'xlm-roberta-base'
-
+            # remove bad values
             df = df.loc[
                 (~df['x_utterance'].isna())
                 & (~df['y_utterance'].isna())
             ]
-            # df['conversation_id'] = submission_id
-
-            # meta_data_cols = [col for col in list(df) if col not in ['x_utterance', 'y_utterance']]
 
             print('===]{}[==='.format(submission_id))
             print('{}/{}'.format(i+1, len(subids)))
@@ -129,6 +110,7 @@ with torch.no_grad():
 
             outfile = os.path.join(checkpoint_name, checkpoint_name.split('/')[-1] + '.parquet')
 
+            # reset and create new processing object.
             GRAPH = processor(
                 wv_model=wv_model_name,
                 wv_layers=level,
@@ -136,11 +118,17 @@ with torch.no_grad():
                 # checkpoint_location=os.path.join(CKPTS_PATH, checkpoint_name)
             )
 
+            # creates a string per comparison of x to y utterance containining:
+            #   (1) max COS for each token in x, concatenated with
+            #   (2) max COS for each token in y
+            #   (3) columns contianing the number of tokens in the utterance x (nx),
+            #       and the number of tokens in the utterance y (ny)
             GRAPH.fit(
                 x=df['x_utterance'].values,
                 y=df['y_utterance'].values,
             )
 
+            # concat and save
             gdf = pd.concat([df[meta_data_cols].reset_index(), GRAPH.df()], axis=1)
 
             gdf.to_parquet(
