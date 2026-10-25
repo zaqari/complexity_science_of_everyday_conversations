@@ -17,7 +17,7 @@ The scripts contained here ought to be run in the following steps:
 2. Run the scripts contained in preprocessing labeled `0-`
 
 ### (2) Calculating information for pairwise comparisons
-In an earlier version, we needed to ascertain how much using entropy versus just raw information caused measurement variances. For this reason, we ended up taking a multi-step process to calculate both of these measurements. The scripts for this are contained in the directory `server_side_scripts`. Run them in the following order:
+In an earlier version, we needed to ascertain how much using entropy versus just raw information caused measurement variances. For this reason, we ended up taking a multi-step process to calculate both of these measurements. The scripts for this are contained in the directory `server-side-scripts`. Run them in the following order:
 1. Run `shape_COS.py` to get strings of maximum CoS values (min CoE) for all comparisons 
 2. Run `process_COS_data_METHODSTEST.py`
 3. scp files from server to local computer
