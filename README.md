@@ -4,11 +4,13 @@ How is it that people work together to progress a conversation? If you started f
 
 The objective of this project is to assess these questions. We analyze 5,448 conversations to get at answers to this problem.
 
-- [ ] [A webpage containing complete study information, methods descriptions (including an interactive visualization of method steps), and interactive results visualizations.](https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html)
+> [A webpage containing complete study information, methods descriptions (including an interactive visualization of method steps), and interactive results visualizations.](https://zaqari.github.io/complexity_science_of_everyday_conversations/web/report.html)
 
 
 ## Process/Steps
 The scripts contained here ought to be run in the following steps:
+
+You can circumvent having to run steps in both (1) and (2) by [downloading the data from the following UCLA box folder](https://ucla.box.com/s/8qhlrqvh7i2g3vtzbcrmc17y8swr3td8).
 
 ### (1) Data pre-processing
 1. Collect data from the sources required
